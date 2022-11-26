@@ -12,11 +12,25 @@ const ListaTareas = ({tareas,cambiarTareas}) => {
             return tarea;
         }));
     }
+
+    const editarTareas = (id,texto) =>{
+        cambiarTareas(tareas.map((tarea)=> {
+            if(tarea.id === id){
+                console.log(tarea.texto);
+                return{
+                    ...tarea,
+                    texto : texto
+                    
+                }
+                
+            }
+            return tarea;
+        }));
+    }
     return ( 
         <ul className="lista-tareas">
             { tareas.length > 0 ? tareas.map((tarea) =>{
-                console.log(tarea.id);
-                return <Tarea  key={tarea.id} tarea={tarea} toggleCompletada={toggleCompletada} />
+                return <Tarea  key={tarea.id} tarea={tarea} toggleCompletada={toggleCompletada} editarTareas={editarTareas} />
 
                 })
             : <div className="lista-tareas__mensaje">~ No hay tareas ~</div>
