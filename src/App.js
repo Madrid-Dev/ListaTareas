@@ -16,7 +16,6 @@ const App= ()=>{
     ]
     
   );
-  console.log(tareas);
   return (
     <div className='contenedor'>
       <Header/>
