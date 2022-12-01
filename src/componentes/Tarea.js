@@ -4,7 +4,7 @@ import { faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const Tarea = ({tarea,toggleCompletada,editarTareas}) => {
+const Tarea = ({tarea,toggleCompletada,editarTareas,borrarTarea}) => {
     const [editandoTarea,cambiarEditandoTarea] = useState(false); // VALOR POR DEFECTO FALSE
     const [nuevaTarea,cambiarNuevaTarea] = useState(tarea.texto);
 
@@ -50,7 +50,8 @@ const Tarea = ({tarea,toggleCompletada,editarTareas}) => {
                     onClick={() => cambiarEditandoTarea(!editandoTarea)}/>
                 <FontAwesomeIcon 
                     icon={faTimes} 
-                    className ='lista-tareas__icono lista-tareas__icono-accion'/>
+                    className ='lista-tareas__icono lista-tareas__icono-accion'
+                    onClick={() => borrarTarea(tarea.id)}/>
             </div>
             
         </li>

@@ -14,6 +14,7 @@ const FormularioTareas = ({tareas,cambiarTareas}) => {
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
+        
 
         cambiarTareas(
             [
@@ -25,6 +26,7 @@ const FormularioTareas = ({tareas,cambiarTareas}) => {
                  }
             ]
         );
+        cambiarInputTarea('');
     }
 
     return ( 
